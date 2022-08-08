@@ -144,7 +144,6 @@ p {
 }
 .billboard {
   position: relative;
-  overflow: hidden;
 }
 .billboard img {
   width: 100%;
@@ -314,10 +313,12 @@ p {
     display: none;
   }
   .billboard-content {
-    display: none;
+    position: static;
+    box-shadow: none;
+    width: 100%;
   }
-  .billboard img {
-    object-fit: cover;
+  .page-wrapper {
+    padding: 0px 24px;
   }
 }
 @media only screen and (max-width: 700px) {
