@@ -1,21 +1,34 @@
+serverLink = "https://wtcherr.github.io/bld-internship-project1/db.json";
+
 search_btn = document.getElementById("search-btn");
 search_btn.addEventListener("click", (event) => {
-  submitSearch();
+  coursesPromise.then((res) => submitSearch(res.courses));
 });
+
 function loadCourses() {
-  link = "http://localhost:3000/courses";
-  processRequest(link);
+  link = serverLink;
+  coursesPromise = processRequest(link);
+  coursesPromise.then((res) => renderCourses(res.courses));
 }
-function submitSearch() {
+
+function submitSearch(courses) {
   search_text = document.getElementsByClassName("input-field")[0].value;
-  let link = "http://localhost:3000/courses?title_like=" + search_text;
-  processRequest(link);
+  let pattern = new RegExp(search_text, "gi");
+  results = [];
+  for (let i = 0; i < courses.length; i++) {
+    if (pattern.test(courses[i].title)) {
+      results.push(courses[i]);
+    }
+  }
+  if (results.length > 0) renderCourses(results);
 }
-function processRequest(link) {
-  fetch(link)
-    .then((response) => response.json())
-    .then((json) => renderCourses(json));
-}
+
+const processRequest = async (link) => {
+  let response = await fetch(link);
+  let json = await response.json();
+  return json;
+};
+
 function renderCourses(coursesJson) {
   courses_carousel = document.getElementsByClassName("courses-carousel")[0];
   let course_cards = [];
@@ -29,6 +42,7 @@ function renderCourses(coursesJson) {
     }
   }
 }
+
 function createCourseCard(course) {
   course_card = document
     .getElementsByClassName("course-card")[0]
