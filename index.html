@@ -30,7 +30,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
     />
   </head>
-  <body>
+  <body onload="loadCourses()">
     <div class="home-bar">
       <div class="nav-bar">
         <div class="option">
@@ -46,7 +46,7 @@
         <div class="option option1"><a href="#">Categories</a></div>
         <div class="search-bar">
           <form action="#">
-            <button type="submit" disabled id="search-btn">
+            <button type="submit" id="search-btn">
               <i class="fa fa-search"></i>
             </button>
             <input
@@ -155,7 +155,7 @@
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star-half-stroke"></i>
             </div>
-            <h4>E£1,399.99</h4>
+            <h4 class="price">E£1,399.99</h4>
           </div>
           <div class="course-card">
             <img
@@ -178,7 +178,7 @@
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star-half-stroke"></i>
             </div>
-            <h4>E£1,199.99</h4>
+            <h4 class="price">E£1,399.99</h4>
           </div>
           <div class="course-card">
             <img
@@ -201,7 +201,7 @@
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star-half-stroke"></i>
             </div>
-            <h4>E£1,399.99</h4>
+            <h4 class="price">E£1,399.99</h4>
           </div>
           <div class="course-card">
             <img
@@ -224,7 +224,7 @@
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star-half-stroke"></i>
             </div>
-            <h4>E£1,399.99</h4>
+            <h4 class="price">E£1,399.99</h4>
           </div>
           <div class="course-card">
             <img
@@ -245,10 +245,11 @@
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star-half-stroke"></i>
             </div>
-            <h4>E£1,399.99</h4>
+            <h4 class="price">E£1,399.99</h4>
           </div>
         </div>
       </div>
     </div>
   </body>
+  <script src="app.js"></script>
 </html>
