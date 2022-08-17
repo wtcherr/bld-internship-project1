@@ -30,7 +30,7 @@ const processRequest = async (link) => {
 };
 
 function renderCourses(coursesJson) {
-  courses_carousel = document.getElementsByClassName("card-wrapper")[0];
+  courses_carousel = document.getElementsByClassName("courses-carousel")[0];
   let course_cards = [];
   for (let i = 0; i < coursesJson.length; i++) {
     course_cards.push(createCourseCard(coursesJson[i]));
