@@ -61,8 +61,15 @@ h1 {
 h2 {
   margin-bottom: 15px;
 }
+h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
 h5 {
   font-weight: 100;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 p {
   margin-bottom: 12px;
@@ -198,6 +205,9 @@ p {
 .courses-carousel {
   display: flex;
   flex-wrap: wrap;
+}
+.card-wrapper {
+  display: flex;
 }
 .course-card {
   width: 20%;
